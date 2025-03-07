@@ -23,8 +23,18 @@ func DataSemantics() {
 
 	/*
 		This is the value semantic representation of the for range loop
+		Here in this loop fruit variable is a copy of every element in fruits array which means it has a copy of the
+		pointer every element points at and the size of every element(2 words string)
 	*/
 	for i, v := range fruits {
 		fmt.Println(i, v)
+	}
+
+	/*
+		This is the pointer semantic of the range loop here we don't have any fruit variable that copy the fruits elements
+		we're just accessing by index in the shared mode.
+	*/
+	for i := range fruits {
+		fmt.Println(i, fruits[i])
 	}
 }
