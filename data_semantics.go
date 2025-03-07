@@ -4,6 +4,8 @@ import "fmt"
 
 func DataSemantics() {
 
+	fmt.Println("############## Value semantics")
+
 	/*
 		Strings are two words structure each word is 4 bytes, Here we have an array of 5 string which means machine
 		allocates the 40 bytes for this array.
@@ -27,14 +29,50 @@ func DataSemantics() {
 		pointer every element points at and the size of every element(2 words string)
 	*/
 	for i, v := range fruits {
+		/*
+			This print function also has its own copy of the fruits elements
+		*/
 		fmt.Println(i, v)
 	}
 
 	/*
-		This is the pointer semantic of the range loop here we don't have any fruit variable that copy the fruits elements
-		we're just accessing by index in the shared mode.
+		    This is the pointer semantic of the range loop here we don't have any fruit variable that copy the fruits elements
+				we're just accessing by index in the shared mode.
+
+			for i := range fruits {
+					fmt.Println(i, fruits[i])
+				}
 	*/
-	for i := range fruits {
-		fmt.Println(i, fruits[i])
+}
+
+func PointerSemantics() {
+
+	fmt.Println("############## Pointer semantics")
+
+	friends := [5]string{"Annie", "James", "John", "Alice", "Donald"}
+	fmt.Printf("Bfr[%s] -> ", friends[1])
+
+	for i := range friends {
+		friends[1] = "Jack"
+
+		if i == 1 {
+			fmt.Printf("Aft[%s]\n", friends[1])
+		}
+	}
+}
+
+func ValueSemantics() {
+
+	fmt.Println("############## Value semantics")
+
+	friends := [5]string{"Annie", "James", "John", "Alice", "Donald"}
+	fmt.Printf("Bfr[%s] -> ", friends[1])
+
+	for i, v := range friends {
+		friends[1] = "Jack"
+
+		if i == 1 {
+			fmt.Printf("Aft[%s]\n", v)
+		}
 	}
 }

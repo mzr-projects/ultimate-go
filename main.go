@@ -153,6 +153,10 @@ func variables() {
 	CreateUserV2()
 
 	StackGrow()
+
+	DataSemantics()
+	PointerSemantics()
+	ValueSemantics()
 }
 
 func PointerReview() {
