@@ -1,2 +1,4 @@
-The 
 go build -gcflags -m=2
+
+# To run benchmark tests
+go test -run none benchmark . -benchtime 3s
