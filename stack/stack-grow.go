@@ -1,4 +1,4 @@
-package main
+package stack
 
 const size = 1024
 

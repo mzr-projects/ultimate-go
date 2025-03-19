@@ -1,4 +1,4 @@
-package main
+package semantics
 
 type User struct {
 	name  string

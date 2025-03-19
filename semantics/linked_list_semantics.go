@@ -1,4 +1,4 @@
-package main
+package semantics
 
 /*
 Create a square matrix of 2MEG by 2MEG
