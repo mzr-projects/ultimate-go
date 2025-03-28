@@ -12,6 +12,10 @@ import "fmt"
 */
 
 /*
+We shouldn't design around Interfaces we must discover them where we need them they're going to show up
+*/
+
+/*
 Speaker
 Here instead of thinking about what the animal is! We think about what the animal DOES unlike the demo_one code we
 designed like an OOP language
