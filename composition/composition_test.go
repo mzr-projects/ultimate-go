@@ -9,3 +9,11 @@ func TestCompositionTwoDemo(t *testing.T) {
 func TestDemoThree(t *testing.T) {
 	DemoThree()
 }
+
+func TestDemoFour(t *testing.T) {
+	DemoFive()
+}
+
+func TestDemoSix(t *testing.T) {
+	DemoSix()
+}
