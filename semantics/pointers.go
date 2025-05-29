@@ -2,13 +2,13 @@ package semantics
 
 func PointerReview() {
 	count := 10
-	println("count:\tValue of[", count, "]\tAddr of [", &count, "]")
+	println("total:\tValue of[", count, "]\tAddr of [", &count, "]")
 
 	incrementValueSemantic(count)
-	println("count:\tValue of[", count, "]\tAddr of [", &count, "]")
+	println("total:\tValue of[", count, "]\tAddr of [", &count, "]")
 
 	/*
-		Here we pass the address of count
+		Here we pass the address of total
 	*/
 	incrementPointerSemantic(&count)
 }

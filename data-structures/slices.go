@@ -20,9 +20,9 @@ func SliceDemo() {
 		Here we create a slice with length of 5 elements
 
 		Slices are always a 3-word data structures
-		1st word Is a pointer to backing array which holds the actual 5 elements
+		1st word Is a pointer to a backing array which holds the actual 5 elements
 		2nd word represents the length of the slice which is 5 here
-		3rd word is the Capacity and here its set to 5
+		 the 3rd word is the Capacity and here it's set to 5
 	*/
 	fruits := make([]string, 5)
 	fruits[0] = "Apple"
@@ -31,7 +31,7 @@ func SliceDemo() {
 	fruits[3] = "Grape"
 	fruits[4] = "Pear"
 	/*
-		If we do this we going to get Index out of bound error
+		If we do this we're going to get Index out of bound error
 	*/
 	//fruits[5] = "Apple"
 
@@ -42,7 +42,7 @@ func SliceDemo() {
 	fmt.Printf("%v\n\n", fruits)
 
 	/*
-		Here we create slice with length 5 and capacity 8 the capacity shows the efficiency for the future growth of
+		Here we create a slice with length 5 and capacity 8 the capacity shows the efficiency for the future growth of
 		the slice, and we only can read and write those 5 elements.
 	*/
 	fruitsCap := make([]string, 5, 8)
@@ -76,7 +76,7 @@ func InspectSlice(slice []string) {
 
 func AppendToSlice() {
 	/*
-		Define a nil value slice, this is still the 3-word value but the pointer is nil, the length and the capacity are
+		Define a nil value slice, this is still the 3-word value, but the pointer is nil, the length and the capacity are
 		0 as well
 	*/
 	var data []string
@@ -126,9 +126,10 @@ func SliceOfSlice() {
 		    The following change will mutate the fruitCap in index 0 and fruitCap2 in index 2 because they're sharing the
 			same back array in the memory.
 	*/
-	//fruitsCap2[0] = "Gum"
-	//InspectSlice(fruitsCap)
-	//InspectSlice(fruitsCap2)
+	fmt.Println("============ Change index 0 of sub-slice")
+	fruitsCap2[0] = "Gum"
+	InspectSlice(fruitsCap)
+	InspectSlice(fruitsCap2)
 
 	fmt.Println("============ Change the Slice with Capacity Change")
 	/*
