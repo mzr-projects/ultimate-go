@@ -1,4 +1,4 @@
-package variables
+package data_types
 
 import (
 	"fmt"
@@ -60,7 +60,7 @@ func Variables() {
 	fmt.Println("############## Initialization")
 
 	/*
-		Here we declare and initialize variables at the same time
+		Here we declare and initialize data-types at the same time
 	*/
 	aa := 10
 	bb := "hello"

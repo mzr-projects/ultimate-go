@@ -36,7 +36,7 @@ func (bike) Unlock() {
 
 func BikeDemo() {
 	/*
-		Declare variables of MoveLocker and Mover interfaces set to their zero values
+		Declare data-types of MoveLocker and Mover interfaces set to their zero values
 	*/
 	var ml MoveLocker
 	var m Mover

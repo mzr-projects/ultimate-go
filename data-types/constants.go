@@ -1,4 +1,4 @@
-package variables
+package data_types
 
 import (
 	"fmt"
@@ -71,12 +71,12 @@ func Constants() {
 		Here we're shifting by one at the first line and the others shift by 2,4,8,16,32
 	*/
 	const (
-		Ldate = 1 << iota
-		Ltime
-		Lmicroseconds
-		Llongfile
-		Lshortfile
-		LUTC
+		lDate = 1 << iota
+		lTime
+		lMicroseconds
+		lLongFile
+		lShortFile
+		lUTC
 	)
-	fmt.Println("Log:", Ldate, Ltime, Lmicroseconds, Llongfile, Lshortfile, LUTC)
+	fmt.Println("Log:", lDate, lTime, lMicroseconds, lLongFile, lShortFile, lUTC)
 }

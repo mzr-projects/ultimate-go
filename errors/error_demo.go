@@ -6,7 +6,7 @@ import (
 )
 
 /*
-Here we defined 2 error variables one for bad_request and another for authentication
+Here we defined 2 error data-types one for bad_request and another for authentication
 */
 var (
 	ErrBadRequest     = errors.New("bad request")

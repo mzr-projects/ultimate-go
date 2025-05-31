@@ -2,13 +2,13 @@ package main
 
 import (
 	"ultimate-go/data-structures"
+	"ultimate-go/data-types"
 	"ultimate-go/semantics"
 	"ultimate-go/stack"
-	"ultimate-go/variables"
 )
 
 func main() {
-	variables.Constants()
+	data_types.Constants()
 
 	semantics.PointerReview()
 
