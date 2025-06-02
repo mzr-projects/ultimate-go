@@ -44,7 +44,7 @@ func FailedUpdate(g *int) {
 }
 
 /*
-Update to change the value pointer points to we must dereference the pointer, we can't changed the value by assigning
+Update to change the value pointer points to we must dereference the pointer, we can't change the value by assigning
 the address of the value(like above function)
 */
 func Update(px *int) {
