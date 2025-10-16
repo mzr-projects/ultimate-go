@@ -5,7 +5,7 @@ import "fmt"
 /*
 Animal
 In Go we're not seeking what the type is we seek what the type DOES here in this code we're kinda using subtyping which
-there is no meaning for subtyping in Go like object oriented languages(JAVA,and so on)
+there is no meaning for subtyping in Go like object-oriented languages(JAVA,and so on)
 */
 type Animal struct {
 	Name     string
@@ -21,6 +21,9 @@ func (a *Animal) Speak() {
 	fmt.Printf("Animal %s Speaks! and its %t I am mammmal\n", a.Name, a.IsMammal)
 }
 
+/*
+Dog -> Animal is an Embedded field
+*/
 type Dog struct {
 	Animal
 	PackFactor int
@@ -30,6 +33,9 @@ func (d *Dog) Speak() {
 	fmt.Printf("Woof! My name is %s its %t I am mammal with pack %d\n", d.Name, d.IsMammal, d.PackFactor)
 }
 
+/*
+Cat -> Animal is an Embedded field
+*/
 type Cat struct {
 	Animal
 	ClimbFactor int
