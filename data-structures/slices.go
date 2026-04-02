@@ -17,12 +17,12 @@ func SliceDemo() {
 
 	fmt.Println("################ Slice Demo")
 	/*
-		Here we create a slice with length of 5 elements
+			Here we create a slice with a length of 5 elements
 
-		Slices are always a 3-word data structures
-		1st word Is a pointer to a backing array which holds the actual 5 elements
-		2nd word represents the length of the slice which is 5 here
-		 the 3rd word is the Capacity and here it's set to 5
+			Slices are always a 3-word data structure
+			1st word Is a pointer to a backing array which holds the actual 5 elements
+			2nd word represents the length of the slice which is 5 here
+		    3rd word is the Capacity and here it's set to 5
 	*/
 	fruits := make([]string, 5)
 	fruits[0] = "Apple"
@@ -31,12 +31,12 @@ func SliceDemo() {
 	fruits[3] = "Grape"
 	fruits[4] = "Pear"
 	/*
-		If we do this we're going to get Index out of bound error
+		If we do this, we're going to get Index out of bound error
 	*/
 	//fruits[5] = "Apple"
 
 	/*
-		Here we're using the Value semantic to pass fruits into Printf function, it means Printf function is going
+		Here we're using the Value semantic to pass fruits into Printf function; it means Printf function is going
 		to have its own copy of the 3-word slice(fruits)
 	*/
 	fmt.Printf("%v\n\n", fruits)
@@ -94,6 +94,30 @@ func AppendToSlice() {
 		*/
 		data = append(data, value)
 	}
+}
+
+func SliceModification() {
+	type Book struct {
+		Title  string
+		Author string
+	}
+
+	var books []Book
+	books = []Book{
+		{
+			Title:  "The Go Programming Language",
+			Author: " Me ",
+		}, {
+			Title:  "The Go Programming Language",
+			Author: " You ",
+		},
+	}
+
+	fmt.Println("Before modification :", books)
+
+	books[0].Author = "James"
+
+	fmt.Println("After modification :", books)
 }
 
 /*
