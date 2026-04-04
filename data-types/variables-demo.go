@@ -10,12 +10,12 @@ import (
 Defining a new type includes some fields
 this struct gets some memory: one byte for bool, two bytes for int16, four bytes for float32 so this struct gets
 seven bytes of memory, but in the actual world it doesn't get seven bytes because of OS memory alignment and there
-is one byte for the alignment. Because a 64bit machine carries 64 eight bytes words here we have struct with seven bytes,
-so to fit this in one operation we need one byte padding to fit this in an eight-byte word
+is one byte for the alignment. Because a 64bit machine carries 8 eight-byte words, here we have a struct with seven bytes,
+so to fit this in one operation, we need one byte padding to fit this in an eight-byte word
 
 	Type example struct {
 		flag bool
-		counter int64
+		counter int16
 		pi float32
 	}
 
@@ -42,15 +42,15 @@ type nancy struct {
 func Variables() {
 
 	/*
-		 Go has int16,int23,int64. If we're in 32-bit cpu then int32 in the most efficient int
-		but if we're an int64 bit cpu then int64 is the most efficient int
+		 Go has int16,int23,int64. If we're in 32-bit cpu, then int32 in the most efficient int,
+		but if we're an in 64-bit cpu, then int64 is the most efficient int
 
 		Here by using var, we create a zero-value variable
 	*/
 	var a int
 	var b string
-	var c float64 // Represent 64 bytes of memory
-	var d bool    // 1 byte of memory
+	var c float64 // Represent 64 bits of memory
+	var d bool    // 1 bit of memory
 
 	fmt.Printf("var a int is: \t %T [%v]\n", a, a)
 	fmt.Printf("var b string is: \t %T [%v]\n", b, b)
@@ -132,7 +132,7 @@ func Variables() {
 	var bi bill
 	var na nancy
 	bi = bill(na)
-	fmt.Println(bi, na)
+	fmt.Printf("Struct type conversion: bi:%v, na:%v\n", bi, na)
 
 	/*
 		Here we can have conversion without being explicit because anonymous2 is not based on named type but a literal
