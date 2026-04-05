@@ -5,6 +5,10 @@ import (
 	"testing"
 )
 
+func TestPointerReview(t *testing.T) {
+	PointerReview()
+}
+
 func TestFailedUpdate_1(t *testing.T) {
 	var f *int
 	FailedUpdate(f)

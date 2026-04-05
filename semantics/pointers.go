@@ -3,7 +3,6 @@ package semantics
 func PointerReview() {
 	count := 10
 	println("total:\tValue of[", count, "]\tAddr of [", &count, "]")
-
 	incrementValueSemantic(count)
 	println("total:\tValue of[", count, "]\tAddr of [", &count, "]")
 
@@ -11,6 +10,8 @@ func PointerReview() {
 		Here we pass the address of total
 	*/
 	incrementPointerSemantic(&count)
+	println("(After Pointer Incrementation) total:\tValue of[", count, "]\tAddr of [", &count, "]")
+
 }
 
 func incrementValueSemantic(inc int) {
@@ -23,15 +24,15 @@ Here the method argument says I don't want an int value, I want an address of in
 */
 func incrementPointerSemantic(inc *int) {
 	/*
-		Before we dereference the pointer (using * to get the value), we need to nil check the pointer,otherwise we get
+		Before we dereference the pointer (using * to get the value), we need to nil check the pointer, otherwise we get
 		a panic error
 	*/
 	if inc == nil {
 		return
-	} else {
-		*inc++
 	}
-	println("inc:\tValue of[", inc, "]\tAddr of [", &inc, "]\tValue points to [", *inc, "]")
+
+	*inc++
+	println("(In Pointer Incrementation) inc:\tValue of[", inc, "]\tAddr of [", &inc, "]\tValue points to [", *inc, "]")
 }
 
 /*
