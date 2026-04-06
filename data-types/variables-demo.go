@@ -3,7 +3,6 @@ package data_types
 import (
 	"fmt"
 	datastructures "ultimate-go/data-structures"
-	"ultimate-go/semantics"
 )
 
 /*
@@ -142,9 +141,6 @@ func Variables() {
 	fmt.Println(bi, na)
 
 	fmt.Println("############## Pointers")
-
-	semantics.CreateUserV1()
-	semantics.CreateUserV2()
 
 	datastructures.SliceDemo()
 }

@@ -12,6 +12,9 @@ func main() {
 
 	semantics.PointerReview()
 
+	semantics.CreateUserV1()
+	semantics.CreateUserV2()
+
 	semantics.DataSemantics()
 	semantics.ValueSemantics()
 	semantics.PointerSemantics()
