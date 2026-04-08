@@ -19,7 +19,7 @@ func main() {
 	semantics.ValueSemantics()
 	semantics.PointerSemantics()
 
-	stack.StackGrow()
+	stack.ShowStackGrow()
 
 	data_structures.SliceDemo()
 	data_structures.AppendToSlice()

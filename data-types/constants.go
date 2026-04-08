@@ -17,15 +17,16 @@ func Constants() {
 	*/
 	const ui = 1234      // kind: integer
 	const uf = 1234.1234 // kind: float
-
 	fmt.Printf("%T %v, Type: %v\n", ui, ui, reflect.TypeOf(ui))
 	fmt.Printf("%T %v, Type: %v\n", uf, uf, reflect.TypeOf(uf))
 
 	/*
 		Typed base constants
 	*/
-	const ti int = 1234          // type: int
-	const tf float64 = 1234.1234 // type: float64
+	const ti int = 1234          // type: int -> ti can't be larger than int because it's a type int constant
+	const tf float64 = 1234.1234 // type: float64 -> tf can't be larger than float64 because it's a type float64 constant
+	fmt.Printf("%T %v, Type: %v\n", ti, ti, reflect.TypeOf(ui))
+	fmt.Printf("%T %v, Type: %v\n", tf, tf, reflect.TypeOf(uf))
 
 	//Compile time error: constant 1000 overflows uint8
 	//const myUnit8 uint8 = 1000
