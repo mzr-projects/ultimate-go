@@ -2,7 +2,7 @@ package semantics
 
 import "fmt"
 
-func DataSemantics() {
+func ArrayDataSemantics() {
 
 	fmt.Println("############## Value semantics")
 
@@ -72,7 +72,8 @@ func ValueSemantics() {
 		friends[1] = "Jack"
 
 		if i == 1 {
-			fmt.Printf("Aft[%s]\n", v)
+			fmt.Printf("(v)Aft[%s]\n", v)
+			fmt.Printf("(friend[1])Aft[%s]\n", friends[1])
 		}
 	}
 }

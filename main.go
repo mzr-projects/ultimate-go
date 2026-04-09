@@ -15,10 +15,6 @@ func main() {
 	semantics.CreateUserV1()
 	semantics.CreateUserV2()
 
-	semantics.DataSemantics()
-	semantics.ValueSemantics()
-	semantics.PointerSemantics()
-
 	stack.ShowStackGrow()
 
 	data_structures.SliceDemo()
