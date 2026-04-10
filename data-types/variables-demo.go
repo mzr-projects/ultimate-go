@@ -2,7 +2,7 @@ package data_types
 
 import (
 	"fmt"
-	datastructures "ultimate-go/data-structures"
+	"unsafe"
 )
 
 /*
@@ -142,5 +142,24 @@ func Variables() {
 
 	fmt.Println("############## Pointers")
 
-	datastructures.SliceDemo()
+	/*
+		This declares variable es with type of anonymous empty struct(zero fields)
+	*/
+	var es struct{}
+	/*
+		This assigns an empty struct literal to es.
+		first struct{} -> type
+		{} at the end -> value literal(empty no-fields)
+
+		es is a variable that holds an empty struct. It has no data, costs no memory,
+		and is mainly used as a signal, placeholder, or set value.
+	*/
+	es = struct{}{} //assign the empty struct literal to it
+	fmt.Printf("es type: %T,es size: %d\n", es, unsafe.Sizeof(es))
+
+	/*
+		    shorter ways:
+			Way 2 — short declaration -> es := struct{}{}
+			Way 3 — inline type -> var es = struct{}{}
+	*/
 }

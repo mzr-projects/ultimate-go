@@ -1,20 +1,21 @@
 package data_structures
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestSliceDemo(t *testing.T) {
-	AppendToSlice()
-	fmt.Println("======= Slice Demo functional test finished. =======")
 	SliceDemo()
 }
 
-func TestSliceOfSlice(t *testing.T) {
-	SliceOfSlice()
+func TestSliceAppend(t *testing.T) {
+	AppendToSlice()
 }
 
 func TestSliceModification(t *testing.T) {
 	SliceModification()
+}
+
+func TestSliceOfSlice(t *testing.T) {
+	SliceOfSlice()
 }

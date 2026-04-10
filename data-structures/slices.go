@@ -10,7 +10,7 @@ Go has 3 different types:
  2. Struct types
  3. Reference types (slices, maps, channels, interfaces)
 
-The reference types and built-in type use the value semantics to move the data around
+The reference types and built-in type use the value semantics to move the data around,
 Reading and writing in reference type is going to be done in Pointer semantic
 */
 func SliceDemo() {
@@ -57,8 +57,6 @@ func SliceDemo() {
 
 	InspectSlice(fruits)
 	InspectSlice(fruitsCap)
-
-	AppendToSlice()
 }
 
 /*
@@ -84,15 +82,18 @@ func AppendToSlice() {
 	lastCap := cap(data)
 	println("lastCap:", lastCap)
 
-	/*
-
-	 */
 	for i := 0; i < 1e5; i++ {
 		value := fmt.Sprintf("Rec: %d", i)
 		/*
 			append will get its own copy of the data value
 		*/
 		data = append(data, value)
+
+		if cap(data) != lastCap {
+			fmt.Printf("%-25s len=%-4d cap=%-4d  ⬆ capacity grew!\n",
+				fmt.Sprintf("after append(%d)", i), len(data), cap(data))
+			lastCap = cap(data)
+		}
 	}
 }
 
