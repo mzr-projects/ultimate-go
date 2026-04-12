@@ -177,14 +177,18 @@ func SliceReferences() {
 	sharedClient.likes++
 
 	for i := range clients {
-		fmt.Printf("User: %d, Likes: %d\n", i, clients[i].likes)
+		fmt.Printf("User: %d, Likes: %d, cap: %d\n", i, clients[i].likes, cap(clients))
 	}
 
 	clients = append(clients, client{})
 	sharedClient.likes++
 
+	// Here we can see that the sharedClient is still pointing to the same memory address, 
+	// but the clients slice has been reallocated to a new memory address with a bigger capacity, 
+	// so the sharedClient is not pointing to the same memory address as before, 
+	// and it will not affect the clients slice anymore.
 	fmt.Println("###########")
 	for i := range clients {
-		fmt.Printf("User: %d, Likes: %d\n", i, clients[i].likes)
+		fmt.Printf("User: %d, Likes: %d, cap: %d\n", i, clients[i].likes, cap(clients))
 	}
 }
