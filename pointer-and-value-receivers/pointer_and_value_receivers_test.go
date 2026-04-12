@@ -1,31 +1,21 @@
-package pointer_and_value_receivers
+package semantics
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
 func TestCounter_Increment(t *testing.T) {
-	t.Parallel()
-	var c Counter
-	c.Increment()
-	fmt.Printf("counter value is: %d\n", c.Value())
-}
+	c := Counter{
+		total: 1,
+	}
 
-func TestWrongUpdate(t *testing.T) {
-	t.Parallel()
-	var c Counter
-	/*
-		Here we are passing the copy of c into the function so the changes will not be seen outside the scope of
-		WrongUpdate, and we will get the 0 value for c
-	*/
-	WrongUpdate(c)
-	fmt.Printf("(WrongUpdate) counter value is: %d\n", c.Value())
-}
+	c.IncrementCounterPointerSemantic()
+	c.InspectCounter()
+	c.IncrementCounterValueSematic()
+	c.InspectCounter()
+	c.IncrementCounterPointerSemantic()
+	c.InspectCounter()
 
-func TestRightUpdate(t *testing.T) {
-	t.Parallel()
-	var c Counter
-	RightUpdate(&c)
-	fmt.Printf("(RightUpdate) counter value is: %d\n", c.Value())
+	UpdateCounterByPassingValue(c)
+	c.InspectCounter()
+	UpdateCounterByPassingPointer(&c)
+	c.InspectCounter()
 }

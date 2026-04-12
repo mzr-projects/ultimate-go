@@ -19,3 +19,7 @@ func TestSliceModification(t *testing.T) {
 func TestSliceOfSlice(t *testing.T) {
 	SliceOfSlice()
 }
+
+func TestSliceReference(t *testing.T) {
+	SliceReferences()
+}

@@ -165,3 +165,26 @@ func SliceOfSlice() {
 	fruitsCap3 = append(fruitsCap3, "Gum")
 	InspectSlice(fruitsCap3)
 }
+
+type client struct {
+	likes int
+}
+
+func SliceReferences() {
+	clients := make([]client, 3)
+
+	sharedClient := &clients[1]
+	sharedClient.likes++
+
+	for i := range clients {
+		fmt.Printf("User: %d, Likes: %d\n", i, clients[i].likes)
+	}
+
+	clients = append(clients, client{})
+	sharedClient.likes++
+
+	fmt.Println("###########")
+	for i := range clients {
+		fmt.Printf("User: %d, Likes: %d\n", i, clients[i].likes)
+	}
+}

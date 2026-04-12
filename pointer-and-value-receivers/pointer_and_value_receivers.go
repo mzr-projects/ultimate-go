@@ -1,21 +1,36 @@
-package pointer_and_value_receivers
+package semantics
+
+import (
+	"fmt"
+	"time"
+)
 
 type Counter struct {
-	count int
+	total      int
+	lastUpdate time.Time
 }
 
-func (c *Counter) Increment() {
-	c.count++
+func (c *Counter) IncrementCounterPointerSemantic() {
+	c.total++
+	c.lastUpdate = time.Now()
 }
 
-func (c *Counter) Value() int {
-	return c.count
+func (c Counter) IncrementCounterValueSematic() {
+	c.total++
 }
 
-func WrongUpdate(c Counter) {
-	c.Increment()
+func (c Counter) InspectCounter() {
+	fmt.Printf("(Inspection) total is :%d, lastUpdate is %s\n", c.total, c.lastUpdate)
 }
 
-func RightUpdate(c *Counter) {
-	c.Increment()
+/*
+UpdateCounterByPassingValue Be aware that the rules for passing values to functions still apply. If we pass a
+value type to a function and call a pointer receiver method on the passed value,we are invoking the method on a copy.
+*/
+func UpdateCounterByPassingValue(c Counter) {
+	c.IncrementCounterPointerSemantic()
+}
+
+func UpdateCounterByPassingPointer(c *Counter) {
+	c.IncrementCounterPointerSemantic()
 }
